@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/default.css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.headershow.js"></script>
+        <script type="text/javascript">
+            // Activate the plugin here.
+            $(function() {
+                $('#demo-data div').headershow({
+                    id: 1,
+                    container: '#demo-container',
+                    hidecontent: true,
+                    width: '513px',
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>jQuery-headershow Demo Page</h1>
+        <p>This page demonstrates a simple use of jQuery-headershow.</p>
+        <div id="demo-container"></div>
+        <div id="demo-data">
+            <div>
+                <img src="img/test-header-01.png" />
+                <p>I looked at a bunch of plugins and tools for 
+                creating this sort of slide show. Many of them are 
+                really neat, but they didn't do exactly what I wanted.</p>
+            </div>
+            <div>
+                <img src="img/test-header-02.png" />
+                <p>You can also let the original content remain visible, 
+                just set 'hidecontent' to false (see page source).</p>
+                <p>This would allow you to feature information certain 
+                pieces of information in an attractive manner but 
+                still let users view all of it at once.</p>
+            </div>
+            <div>
+                <img src="img/test-header-03.png" />
+                <p>The actual file names of the images do not 
+                matter one bit. The content is pulled straight 
+                from the DOM.</p>
+            </div>
+        </div>
+    </body>
+</html>

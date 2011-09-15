@@ -1,0 +1,16 @@
+/*
+    default.css
+    Default styles for jquery-headershow plugin.
+    George Lesica <glesica@gmail.com>
+*/
+
+.hs-container {
+    background: #222;
+    overflow: hidden;
+}
+
+.hs-txt {
+    color: #ddd;
+    padding: 0 1.0em;
+    text-shadow: 1px 1px 4px #000;
+}

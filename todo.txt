@@ -1,0 +1,2 @@
+    _ Make sure settings for each instance are insulated
+    _ Clean up CSS to prevent height changes
