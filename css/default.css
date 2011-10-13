@@ -9,8 +9,29 @@
     overflow: hidden;
 }
 
+.hs-img * {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
 .hs-txt {
     color: #ddd;
-    padding: 0 1.0em;
+    padding: 0.5em 1.0em;
     text-shadow: 1px 1px 4px #000;
+}
+
+.hs-txt * {
+    margin: 0;
+    padding: 0;
+}
+
+.hs-txt  p {
+    margin: 0.5em 0;
+    padding: 0;
+}
+
+.hs-txt p img {
+    float: left;
+    padding: 0 1.0em 1.0em 0;
 }
