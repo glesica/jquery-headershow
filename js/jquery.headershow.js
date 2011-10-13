@@ -58,7 +58,9 @@
 
             // Find the image and text for this element
             var $image = $this.children('img').first();
-            var $text = $this.children('p');
+            //var $text = $this.children('p'); // CRUFT
+            var $text = $image.nextAll();
+            console.debug($text);
             
             // Remove image and text from DOM if needed, otherwise clone
             if (settings.hidecontent) {

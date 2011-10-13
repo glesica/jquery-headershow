@@ -2,16 +2,18 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/default.css" />
+        <link rel="stylesheet" href="css/demo.css" />
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/jquery.headershow.js"></script>
         <script type="text/javascript">
             // Activate the plugin here.
             $(function() {
-                $('#demo-data div').headershow({
+                $('#demo-data > div').headershow({
                     id: 1,
                     container: '#demo-container',
                     hidecontent: true,
                     width: '513px',
+                    delay: 7500,
                 });
             });
         </script>
@@ -23,7 +25,7 @@
         <div id="demo-data">
             <div>
                 <img src="img/test-header-01.png" />
-                <p><img src="img/avatar.jpg" style="float:left;" />I looked at a bunch of plugins and tools for 
+                <p><img src="img/avatar.jpg" class="demoimage" />I looked at a bunch of plugins and tools for 
                 creating this sort of slide show. Many of them are 
                 really neat, but they didn't do exactly what I wanted.</p>
             </div>
@@ -40,6 +42,13 @@
                 <p>The actual file names of the images do not 
                 matter one bit. The content is pulled straight 
                 from the DOM.</p>
+                <div class="demoform">
+                    You can even include things like forms!
+                    <form method="get" action"#">
+                        <input type="text" />
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </body>
