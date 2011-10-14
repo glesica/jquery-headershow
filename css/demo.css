@@ -4,6 +4,10 @@
     George Lesica <glesica@gmail.com>
 */
 
+#demo-container {
+    margin: auto;
+}
+
 .hs-container {
     background: #333;
     color: #ddd;
@@ -12,6 +16,13 @@
 .hs-txt {
     font-family: sans-serif;
     letter-spacing: 0.075em;
+}
+
+#demo-data {
+    border: solid 1px #666;
+    margin: 2.0em auto 0 auto;
+    padding: 2.0em;
+    width: 513px;
 }
 
 .demoimage {
