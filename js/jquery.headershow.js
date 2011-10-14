@@ -22,6 +22,7 @@
             minheight           : null,
             maxwidth            : null,
             maxheight           : null,
+            maxtxtheight        : null,
 
             containerclass      : '',
             imgclass            : '',
@@ -79,7 +80,8 @@
             $text = $text
                 .wrapAll('<div />')
                 .parent()
-                .addClass('hs-txt ' + settings.txtclass);
+                .addClass('hs-txt ' + settings.txtclass)
+                .css('max-height', settings.maxtxtheight);
 
             // Add the new element to the end of the list
             $container.data('elements').push({

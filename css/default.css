@@ -2,23 +2,36 @@
     default.css
     Default styles for jquery-headershow plugin.
     George Lesica <glesica@gmail.com>
+    
+    Some of these can be overridden without affecting 
+    the resulting layout. These have been noted below.
+    The css/demo.css file overrides several of these 
+    styles and adds a few extras to spruce up the 
+    demo.html file a bit.
 */
 
 .hs-container {
     padding: 0;
+    position: relative;
     overflow: hidden;
 }
 
 .hs-img * {
     border: none;
+    display: block;
     float: none;
     margin: 0;
     padding: 0;
 }
 
 .hs-txt {
-    padding: 0.5em 1.0em;
-    text-shadow: 1px 1px 4px #000;
+    background: rgba(0,0,0,0.75); /* override */
+    bottom: 0px;
+    color: #ccc; /* override */
+    margin: 0;
+    overflow: hidden;
+    padding: 0.5em 1.0em; /* override */
+    position: absolute;
 }
 
 

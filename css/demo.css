@@ -8,16 +8,15 @@
     margin: auto;
 }
 
-.hs-container {
-    background: #333;
-    color: #ddd;
-}
-
-.hs-txt {
-    font-family: sans-serif;
-    letter-spacing: 0.075em;
-}
-
+/*
+    Style the original information. The jquery-headershow plugin 
+    lets you leave you existing content almost unchanged (in most 
+    cases).
+    
+    Note that, with the exception of #demo-data, these styles will 
+    follow the content into the header slideshow since the plugin 
+    doesn't strip classes or styles from the content.
+*/
 #demo-data {
     border: solid 1px #666;
     margin: 2.0em auto 0 auto;
@@ -54,3 +53,16 @@
     margin: 0;
     padding: 0.5em;
 }
+
+/*
+    Then we can override a few of the default styles 
+    to make the plugin results a little prettier.
+*/
+.hs-txt {
+    font-family: 'tahoma';
+    font-size: 14px;
+    letter-spacing: 0.075em;
+    text-shadow: 1px 1px 4px #000;
+}
+
+
