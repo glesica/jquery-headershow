@@ -140,11 +140,11 @@
         // Fade each part of the slide out, then replace 
         // the HTML of that part with the appropriate 
         // content from the new slide.
-        $(this).children('.hs-img').fadeTo('slow', 0.0, function() {
+        $(this).children('.hs-img').fadeTo('fast', 0.0, function() {
             $(this).html(slide.img.html())
             $(this).fadeTo('slow', 1.0);
         });
-        $(this).children('.hs-txt').fadeTo('slow', 0.0, function() {
+        $(this).children('.hs-txt').fadeTo('fast', 0.0, function() {
             $(this).html(slide.txt.html())
             $(this).fadeTo('slow', 1.0);
         });
