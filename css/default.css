@@ -17,6 +17,43 @@
     overflow: hidden;
 }
 
+.hs-button {
+    background: #eee; /* override */
+    box-shadow: 0.25em 0.25em 0.5em #333; /* override */
+    opacity: 0.40; /* override */
+    padding: 0.5em;
+    position: absolute;
+    
+    transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    
+    z-index: 1;
+}
+
+.hs-button:hover {
+    opacity: 0.8; /* override */
+}
+
+.hs-button > img {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.hs-button-forward {
+    border-radius: 1.0em 0 0 1.0em;
+    right: 0;
+    top: 1.0em;
+}
+
+.hs-button-backward {
+    border-radius: 0 1.0em 1.0em 0;
+    left: 0px;
+    top: 1.0em;
+}
+
 .hs-img * {
     border: none;
     display: block;
