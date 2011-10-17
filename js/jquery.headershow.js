@@ -182,6 +182,7 @@
     var togglePaused = function() {
         var current = $(this).data('running');
         $(this).data('running', !current);
+        return this;
     }
     
     // Pause the slideshow
