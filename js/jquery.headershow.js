@@ -34,6 +34,12 @@
             txtclass            : '',
 
             hidecontent         : true,
+            
+            displaycontrols     : true,
+            fwdbuttonsrc        : 'img/button_fwd.png',
+            bwdbuttonsrc        : 'img/button_bwd.png',
+            pausebuttonsrc      : 'img/button_pause.png',
+            playbuttonsrc       : 'img/button_play.png',
 
             delay               : 5000,
         };
@@ -61,7 +67,7 @@
                     .css('height', settings.txtheight)
                     .css('min-height', settings.mintxtheight)
                     .css('max-height', settings.maxtxtheight)
-            )
+            );
         
         // Add overlay class to content area if appropriate
         if (settings.txtoverlay) {
@@ -73,6 +79,25 @@
         
         // Set running boolean
         $container.data('running', false);
+        
+        // Add controls if necessary
+        if (settings.displaycontrols) {
+            $container
+                .append(
+                    $('<div />')
+                        .addClass('hs-button hs-button-forward')
+                        .append(
+                            $('<img />').attr('src', settings.fwdbuttonsrc)
+                        )
+                )
+                .append(
+                    $('<div />')
+                        .addClass('hs-button hs-button-backward')
+                        .append(
+                            $('<img />').attr('src', settings.bwdbuttonsrc)
+                        )
+                );
+        }
         
         // Create slides from target objects and add them to the queue.
         this.each(function() {
@@ -107,6 +132,14 @@
         });
         
         // Configure events
+        $container.children('.hs-button-forward').click(function() {
+            goForward.call($container);
+        });
+        
+        $container.children('.hs-button-backward').click(function() {
+            goBackward.call($container);
+        });
+        
         $container.mouseenter(function() {
             pause.call(this);
         });
