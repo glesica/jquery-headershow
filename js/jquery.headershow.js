@@ -22,7 +22,12 @@
             minheight           : null,
             maxwidth            : null,
             maxheight           : null,
+            
+            txtheight           : null,
+            mintxtheight        : null,
             maxtxtheight        : null,
+            
+            txtoverlay          : false,
 
             containerclass      : '',
             imgclass            : '',
@@ -81,7 +86,14 @@
                 .wrapAll('<div />')
                 .parent()
                 .addClass('hs-txt ' + settings.txtclass)
+                .css('height', settings.txtheight)
+                .css('min-height', settings.mintxtheight)
                 .css('max-height', settings.maxtxtheight);
+            
+            // Add overlay class to content area if appropriate
+            if (settings.txtoverlay) {
+                $text.addClass('hs-txt-overlay');
+            }
 
             // Add the new element to the end of the list
             $container.data('elements').push({
