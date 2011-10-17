@@ -52,6 +52,11 @@
             .append('<div class="hs-img ' + settings.imgclass + '" />') // UGLY
             .append('<div class="hs-txt ' + settings.txtclass + '" />') // UGLY
         
+        // Add overlay class to content area if appropriate
+        if (settings.txtoverlay) {
+            $container.children('.hs-txt').addClass('hs-txt-overlay');
+        }
+        
         // Set elements array to empty
         $container.data('elements', new Array());
         
@@ -89,11 +94,6 @@
                 .css('height', settings.txtheight)
                 .css('min-height', settings.mintxtheight)
                 .css('max-height', settings.maxtxtheight);
-            
-            // Add overlay class to content area if appropriate
-            if (settings.txtoverlay) {
-                $text.addClass('hs-txt-overlay');
-            }
 
             // Add the new element to the end of the list
             $container.data('elements').push({
@@ -118,11 +118,12 @@
             }
         }, settings.delay);
         
-        // Show the first slide
-        displaySlide.call($container, $container.data('elements').shift());
-        
         // Set status to running so slideshow runs
         $container.data('running', true);
+        
+        // Show the first slide
+        //displaySlide.call($container, $container.data('elements').shift());
+        goForward.call($container);
         
         return this;
     }
@@ -130,11 +131,28 @@
     // Function to display the slide passed to it and return the old
     // slide. This is where the transition animation is handled.
     var displaySlide = function(slide) {
-        $(this).fadeTo('slow', 0.0, function() {
-            $(this).children('.hs-img').replaceWith(slide.img);
-            $(this).children('.hs-txt').replaceWith(slide.txt);
+        /* var $img = $(this).children('.hs-img').first();
+        var $txt = $(this).children('.hs-txt').first();
+        // Fade everything but the container, then do the replaces
+        $(this).children('.hs-img').first().fadeTo('slow', 0.0, function() {
+            $img.replaceWith(slide.img);
+            $img.fadeTo('slow', 1.0);
+        });
+        $(this).children('.hs-txt').first().fadeTo('slow', 0.0, function() {
+            $txt.replaceWith(slide.txt);
+            $txt.fadeTo('slow', 1.0);
+        }); */
+        
+        $(this).children('.hs-img').first().fadeTo('slow', 0.0, function() {
+            $(this).html(slide.img.html())
             $(this).fadeTo('slow', 1.0);
         });
+        $(this).children('.hs-txt').first().fadeTo('slow', 0.0, function() {
+            $(this).html(slide.txt.html())
+            $(this).fadeTo('slow', 1.0);
+        });
+        
+        return this;
     }
 
     // Advance the slideshow by one slide
