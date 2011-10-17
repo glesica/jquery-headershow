@@ -49,8 +49,19 @@
             .height(settings.height)
             .css('min-width', settings.minWidth)
             .css('min-height', settings.minHeight)
-            .append('<div class="hs-img ' + settings.imgclass + '" />') // UGLY
-            .append('<div class="hs-txt ' + settings.txtclass + '" />') // UGLY
+            .append(
+                $('<div />')
+                    .addClass('hs-img')
+                    .addClass(settings.imgclass)
+            )
+            .append(
+                $('<div />')
+                    .addClass('hs-txt')
+                    .addClass(settings.txtclass)
+                    .css('height', settings.txtheight)
+                    .css('min-height', settings.mintxtheight)
+                    .css('max-height', settings.maxtxtheight)
+            )
         
         // Add overlay class to content area if appropriate
         if (settings.txtoverlay) {
@@ -85,15 +96,10 @@
             // Wrap image and text for use in slideshow
             $image = $image
                 .wrapAll('<div />')
-                .parent()
-                .addClass('hs-img ' + settings.imgclass);
+                .parent();
             $text = $text
                 .wrapAll('<div />')
-                .parent()
-                .addClass('hs-txt ' + settings.txtclass)
-                .css('height', settings.txtheight)
-                .css('min-height', settings.mintxtheight)
-                .css('max-height', settings.maxtxtheight);
+                .parent();
 
             // Add the new element to the end of the list
             $container.data('elements').push({
@@ -122,32 +128,25 @@
         $container.data('running', true);
         
         // Show the first slide
-        //displaySlide.call($container, $container.data('elements').shift());
-        goForward.call($container);
+        // Note: we display it manually to prime the pump since the 
+        // goForward and goBackward functions rely on a current slide
+        displaySlide.call($container, $container.data('elements').shift());
         
         return this;
     }
 
-    // Function to display the slide passed to it and return the old
-    // slide. This is where the transition animation is handled.
+    // Function to display the slide passed to it and return the 
+    // slideshow container. This is where the transition 
+    // animation is handled.
     var displaySlide = function(slide) {
-        /* var $img = $(this).children('.hs-img').first();
-        var $txt = $(this).children('.hs-txt').first();
-        // Fade everything but the container, then do the replaces
-        $(this).children('.hs-img').first().fadeTo('slow', 0.0, function() {
-            $img.replaceWith(slide.img);
-            $img.fadeTo('slow', 1.0);
-        });
-        $(this).children('.hs-txt').first().fadeTo('slow', 0.0, function() {
-            $txt.replaceWith(slide.txt);
-            $txt.fadeTo('slow', 1.0);
-        }); */
-        
-        $(this).children('.hs-img').first().fadeTo('slow', 0.0, function() {
+        // Fade each part of the slide out, then replace 
+        // the HTML of that part with the appropriate 
+        // content from the new slide.
+        $(this).children('.hs-img').fadeTo('slow', 0.0, function() {
             $(this).html(slide.img.html())
             $(this).fadeTo('slow', 1.0);
         });
-        $(this).children('.hs-txt').first().fadeTo('slow', 0.0, function() {
+        $(this).children('.hs-txt').fadeTo('slow', 0.0, function() {
             $(this).html(slide.txt.html())
             $(this).fadeTo('slow', 1.0);
         });
@@ -159,8 +158,8 @@
     var goForward = function() {
         // Add the existing slide to the back of the queue
         $(this).data('elements').push({
-            'img'   : $(this).children('.hs-img').first(),
-            'txt'   : $(this).children('.hs-txt').first(),
+            'img'   : $('<div />').html($(this).children('.hs-img').html()),
+            'txt'   : $('<div />').html($(this).children('.hs-txt').html()),
         });
         // Grab the next element from the queue
         displaySlide.call(this, $(this).data('elements').shift());
@@ -172,8 +171,8 @@
     var goBackward = function() {
         // Add the existing slide to the front of the queue
         $(this).data('elements').unshift({
-            'img'   : $(this).children('.hs-img').first(),
-            'txt'   : $(this).children('.hs-txt').first(),
+            'img'   : $('<div />').html($(this).children('.hs-img').html()),
+            'txt'   : $('<div />').html($(this).children('.hs-txt').html()),
         });
         // Grab the last slide in the queue and make it the current slide
         displaySlide.call(this, $(this).data('elements').pop());
