@@ -15,43 +15,16 @@
     
     Note that, with the exception of #demo-data, these styles will 
     follow the content into the header slideshow since the plugin 
-    doesn't strip classes or styles from the content.
+    doesn't strip classes or styles from the content. It does, 
+    however, take only the *content* of the element it is called 
+    on, which is why the #demo-data styles will not affect the 
+    slideshow.
 */
 #demo-data {
     border: solid 1px #666;
     margin: 2.0em auto 0 auto;
     padding: 2.0em;
-    width: 513px;
-}
-
-.demoimage {
-    float: left;
-    padding: 0 1.0em 1.0em 0;
-}
-
-.demoform {
-    text-align: center;
-    background: #5b7290;
-    border-radius: 0.5em;
-    margin: 0 0 0.5em 0;
-    padding: 0.75em;
-}
-
-.demoform form {
-    margin: 0.5em 0 0 0;
-}
-
-.demoform input[type=text] {
-    border: none;
-    border-radius: 0.25em;
-    box-shadow:inset 1px 1px 2px #333;
-    margin: 0;
-    padding: 0.5em;
-}
-
-.demoform button {
-    margin: 0;
-    padding: 0.5em;
+    width: 600px;
 }
 
 /*
@@ -60,7 +33,7 @@
 */
 .hs-txt {
     font-family: 'tahoma';
-    font-size: 14px;
+    font-size: 1.0em;
     letter-spacing: 0.075em;
     text-shadow: 1px 1px 4px #000;
 }

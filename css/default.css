@@ -11,6 +11,7 @@
 */
 
 .hs-container {
+    background: #333;
     padding: 0;
     position: relative;
     overflow: hidden;
@@ -20,17 +21,25 @@
     border: none;
     display: block;
     float: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
 .hs-txt {
-    background: rgba(0,0,0,0.75); /* override */
+    background: rgba(0,0,0,0.80); /* override */
     bottom: 0px;
     color: #ccc; /* override */
-    margin: 0;
+    margin: 0 auto;
     overflow: hidden;
-    padding: 0.5em 1.0em; /* override */
+    width: 100%;
+}
+
+.hs-txt > * {
+    margin-left: 1.0em;
+    margin-right: 1.0em;
+}
+
+.hs-txt-overlay {
     position: absolute;
 }
 
