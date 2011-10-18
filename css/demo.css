@@ -4,27 +4,24 @@
     George Lesica <glesica@gmail.com>
 */
 
-#demo-container {
-    margin: auto;
+body {
+    text-align: center;
 }
 
 /*
     Style the original information. The jquery-headershow plugin 
     lets you leave you existing content almost unchanged (in most 
     cases).
-    
-    Note that, with the exception of #demo-data, these styles will 
-    follow the content into the header slideshow since the plugin 
-    doesn't strip classes or styles from the content. It does, 
-    however, take only the *content* of the element it is called 
-    on, which is why the #demo-data styles will not affect the 
-    slideshow.
 */
 #demo-data {
     border: solid 1px #666;
     margin: 2.0em auto 0 auto;
     padding: 2.0em;
     width: 600px;
+}
+
+#demo-data div {
+    text-align: left;
 }
 
 /*
@@ -35,6 +32,7 @@
     font-family: 'tahoma';
     font-size: 1.0em;
     letter-spacing: 0.075em;
+    text-align: left;
     text-shadow: 1px 1px 4px #000;
 }
 
