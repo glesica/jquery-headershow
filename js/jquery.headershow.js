@@ -101,10 +101,8 @@
         
         // Create slides from target objects and add them to the queue.
         this.each(function() {
-            var $this = $(this); // The element we're working on
-
             // Find the image and text for this element
-            var $image = $this.children('img').first();
+            var $image = $(this).children('img').first();
             var $text = $image.nextAll();
             
             // Remove image and text from DOM if needed, otherwise clone
