@@ -97,5 +97,11 @@ Default: `'img/button_pause.png'` and `'img/button_play.png'`. Unused.
 
 Default: `5000`. The number of milliseconds to pause on each slide.
 
+### Credits
+
+jQuery-headershow created by George Lesica <glesica@gmail.com>
+
+Background image from http://www.behance.net/pixilated (CC-BY)
+
 
 

@@ -5,7 +5,15 @@
 */
 
 body {
+    background: #222;
+    color: #eee;
+    font-family: sans-serif;
+    padding: 0 0 2.0em 0;
     text-align: center;
+}
+
+h1 {
+    text-shadow: 2px 2px 5px #000;
 }
 
 /*
@@ -16,7 +24,7 @@ body {
 #demo-data {
     border: solid 1px #666;
     margin: 2.0em auto 0 auto;
-    padding: 2.0em;
+    padding: 2.0em 2.0em 1.0em 2.0em;
     width: 600px;
 }
 
@@ -28,8 +36,11 @@ body {
     Then we can override a few of the default styles 
     to make the plugin results a little prettier.
 */
+.hs-container {
+    background: url('../img/bg.png');
+}
+
 .hs-txt {
-    font-family: 'tahoma';
     font-size: 1.0em;
     letter-spacing: 0.075em;
     text-align: left;
