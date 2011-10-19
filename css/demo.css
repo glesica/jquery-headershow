@@ -1,0 +1,50 @@
+/*
+    demo.css
+    Styles for jquery-headershow plugin demo page.
+    George Lesica <glesica@gmail.com>
+*/
+
+body {
+    background: #222;
+    color: #eee;
+    font-family: sans-serif;
+    padding: 0 0 2.0em 0;
+    text-align: center;
+}
+
+h1 {
+    text-shadow: 2px 2px 5px #000;
+}
+
+/*
+    Style the original information. The jquery-headershow plugin 
+    lets you leave you existing content almost unchanged (in most 
+    cases).
+*/
+#demo-data {
+    border: solid 1px #666;
+    margin: 2.0em auto 0 auto;
+    padding: 2.0em 2.0em 1.0em 2.0em;
+    width: 600px;
+}
+
+#demo-data div {
+    text-align: left;
+}
+
+/*
+    Then we can override a few of the default styles 
+    to make the plugin results a little prettier.
+*/
+.hs-container {
+    background: url('../img/bg.png');
+}
+
+.hs-txt {
+    font-size: 1.0em;
+    letter-spacing: 0.075em;
+    text-align: left;
+    text-shadow: 1px 1px 4px #000;
+}
+
+
