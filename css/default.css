@@ -24,7 +24,10 @@
 .hs-button {
     background: #eee; /* override */
     box-shadow: 0.25em 0.25em 0.5em #333; /* override */
+    
     opacity: 0.40; /* override */
+    filter: alpha(opacity = 40); /* ie */
+    
     padding: 0.5em;
     position: absolute;
     
@@ -38,6 +41,7 @@
 
 .hs-button:hover {
     opacity: 0.8; /* override */
+    filter: alpha(opacity = 80); /* ie */
 }
 
 .hs-button > img {
@@ -48,12 +52,20 @@
 
 .hs-button-forward {
     border-radius: 1.0em 0 0 1.0em;
+    -moz-border-radius: 1.0em 0 0 1.0em;
+    -webkit-border-radius: 1.0em 0 0 1.0em;
+    -o-border-radius: 1.0em 0 0 1.0em;
+    
     right: 0;
     top: 5%;
 }
 
 .hs-button-backward {
     border-radius: 0 1.0em 1.0em 0;
+    -moz-border-radius: 0 1.0em 1.0em 0;
+    -webkit-border-radius: 0 1.0em 1.0em 0;
+    -o-border-radius: 0 1.0em 1.0em 0;
+    
     left: 0px;
     top: 5%;
 }
@@ -70,7 +82,9 @@
 }
 
 .hs-txt {
+    background: rgb(0,0,0); /* fallback */
     background: rgba(0,0,0,0.80); /* override */
+    
     bottom: 0px;
     color: #ccc; /* override */
     margin: 0 auto;
