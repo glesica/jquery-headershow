@@ -3,7 +3,7 @@
 A small jQuery plugin to create a nice little slideshow for use 
 at the top of a landing page, something like that.
 
-You can see a demo here: [http://extragoto10line.com/~george/demo.html](http://extragoto10line.com/~george/demo.html "Demo").
+You can see a demo here: [http://glesica.github.com/jquery-headershow/demo.html](http://glesica.github.com/jquery-headershow/demo.html "Demo").
 
 ## Screenshot
 
